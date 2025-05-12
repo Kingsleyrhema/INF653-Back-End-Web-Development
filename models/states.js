@@ -4,14 +4,6 @@ const stateSchema = new mongoose.Schema({
   stateCode: {
     type: String,
     required: true,
-<<<<<<< HEAD
-    unique: true
-  },
-  funfacts: [String]
-});
-
-module.exports = mongoose.model('State', stateSchema);
-=======
     unique: true,
   },
   state: String,
@@ -25,4 +17,3 @@ module.exports = mongoose.model('State', stateSchema);
 const State = mongoose.model('State', stateSchema);
 
 module.exports = State;
->>>>>>> 4be19f1b3fbc4f210b4fc9ae9156b7ff41439025

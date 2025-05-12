@@ -21,11 +21,7 @@ const getAllStates = async (req, res) => {
   const dbStates = await State.find();
   states = states.map(st => {
     const match = dbStates.find(db => db.stateCode === st.code);
-<<<<<<< HEAD
-    if (match?.funfacts?.length) {
-=======
     if (match && match.funfacts && match.funfacts.length) {
->>>>>>> 4be19f1b3fbc4f210b4fc9ae9156b7ff41439025
       return { ...st, funfacts: match.funfacts };
     }
     return st;
@@ -41,13 +37,9 @@ const getState = async (req, res) => {
   }
 
   const dbState = await State.findOne({ stateCode: state.code }).exec();
-<<<<<<< HEAD
-  if (dbState?.funfacts?.length) state.funfacts = dbState.funfacts;
-=======
   if (dbState && dbState.funfacts && dbState.funfacts.length) {
     state.funfacts = dbState.funfacts;
   }
->>>>>>> 4be19f1b3fbc4f210b4fc9ae9156b7ff41439025
 
   res.json(state);
 };
@@ -59,11 +51,7 @@ const getFunFact = async (req, res) => {
   }
 
   const dbState = await State.findOne({ stateCode: state.code }).exec();
-<<<<<<< HEAD
-  if (!dbState?.funfacts?.length) {
-=======
   if (!dbState || !dbState.funfacts || !dbState.funfacts.length) {
->>>>>>> 4be19f1b3fbc4f210b4fc9ae9156b7ff41439025
     return res.status(404).json({ message: `No Fun Facts found for ${state.state}` });
   }
 
@@ -127,11 +115,7 @@ const updateFunFact = async (req, res) => {
   if (!funfact) return res.status(400).json({ message: 'State fun fact value required' });
 
   const dbState = await State.findOne({ stateCode: state.code }).exec();
-<<<<<<< HEAD
-  if (!dbState?.funfacts?.length) {
-=======
   if (!dbState || !dbState.funfacts || !dbState.funfacts.length) {
->>>>>>> 4be19f1b3fbc4f210b4fc9ae9156b7ff41439025
     return res.status(404).json({ message: `No Fun Facts found for ${state.state}` });
   }
 
@@ -155,11 +139,7 @@ const deleteFunFact = async (req, res) => {
   if (!index) return res.status(400).json({ message: 'State fun fact index value required' });
 
   const dbState = await State.findOne({ stateCode: state.code }).exec();
-<<<<<<< HEAD
-  if (!dbState?.funfacts?.length) {
-=======
   if (!dbState || !dbState.funfacts || !dbState.funfacts.length) {
->>>>>>> 4be19f1b3fbc4f210b4fc9ae9156b7ff41439025
     return res.status(404).json({ message: `No Fun Facts found for ${state.state}` });
   }
 
