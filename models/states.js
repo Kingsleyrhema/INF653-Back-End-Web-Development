@@ -4,9 +4,16 @@ const stateSchema = new mongoose.Schema({
   stateCode: {
     type: String,
     required: true,
-    unique: true
+    unique: true,
   },
-  funfacts: [String]
+  state: String,
+  capital_city: String,
+  nickname: String,
+  population: Number,
+  admission_date: String,
+  funfacts: [String],  // Array of fun facts for each state
 });
 
-module.exports = mongoose.model('State', stateSchema);
+const State = mongoose.model('State', stateSchema);
+
+module.exports = State;
