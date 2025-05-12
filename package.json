@@ -12,8 +12,13 @@
   "description": "",
   "dependencies": {
     "dotenv": "^16.5.0",
+<<<<<<< HEAD
     "express": "^5.1.0",
     "mongoose": "^8.14.2"
+=======
+    "express": "^4.21.2",
+    "mongoose": "5.13.21"
+>>>>>>> 4be19f1b3fbc4f210b4fc9ae9156b7ff41439025
   },
   "devDependencies": {
     "nodemon": "^3.1.10"
